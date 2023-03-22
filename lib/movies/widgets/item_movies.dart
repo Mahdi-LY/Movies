@@ -41,9 +41,11 @@ class MovieItem extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Text(
-                              movie.title.toString(),
+                              movie.title.toString().length >= 20
+                                  ? movie.title.toString().substring(0, 20)
+                                  : movie.title.toString(),
                               textAlign: TextAlign.center,
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontSize: 18, fontWeight: FontWeight.bold),
                             ),
                           ],
