@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:task_movies/login&register/login_page.dart';
-import 'package:task_movies/login&register/register.dart';
-
-import '../movies/homepagewithstatemangment.dart';
+import '../view/login&register/login_page.dart';
+import '../view/login&register/register.dart';
+import '../view/movies/homepagewithstatemangment.dart';
 
 class AppRoute {
   static const String moviespage = "MoviesPage";

@@ -10,11 +10,11 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Trojan Movies',
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
       ),
-      initialRoute: AppRoute.moviespage,
+      initialRoute: AppRoute.loginpage,
       onGenerateRoute: AppRoute.ongenratedRoute,
       //home: const HomePageStepOne(),
     );

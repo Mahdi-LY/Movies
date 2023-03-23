@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
-import 'package:task_movies/movies/core/resourc.dart';
-import 'package:task_movies/movies/data/model/movie_model.dart';
-import 'package:task_movies/movies/data/model/movies_modelc_ontroller.dart';
+
+import '../core/resourc.dart';
+import '../data/model/movie_model.dart';
 
 enum Status { init, loading, success, error }
 

@@ -3,7 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../route/approute.dart';
+import '../../route/approute.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -99,7 +99,17 @@ class _LoginPage extends State<LoginPage> {
                         );
                         Navigator.popAndPushNamed(context, AppRoute.moviespage);
                       } catch (e) {
-                        print("-------- SIGN IN ----------- $e");
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return SizedBox(
+                              child: Dialog(
+                                child: Text("Check User Name OR Password"),
+                              ),
+                            );
+                          },
+                        );
+                        print("-------- SIGN IN Error ----------- $e");
                       }
                     }
                   },

@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
-import 'package:task_movies/movies/cubit/movie_state.dart';
-import 'package:task_movies/movies/data/repository/movieRepositoryImp.dart';
 
 import '../data/model/movie_model.dart';
+import '../data/repository/movieRepositoryImp.dart';
+import 'movie_state.dart';
 
 class MovieCubit extends Cubit<MovieState> {
   MovieCubit() : super(MovieInitial());

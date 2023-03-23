@@ -1,5 +1,5 @@
 class AppStrings {
-  static const appName = "NotePad";
+  static const appName = "Trojan Movies";
   static const packageNameID = "Movies";
   static const packageName = "com.heycoder.$packageNameID";
   static const playStoreUrl = "https://play.google.com/store";

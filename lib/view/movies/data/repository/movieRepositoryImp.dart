@@ -1,8 +1,7 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:task_movies/movies/core/resourc.dart';
-import 'package:task_movies/movies/data/model/movies_modelc_ontroller.dart';
 
+import '../../core/resourc.dart';
 import '../model/movie_model.dart';
 import 'movie_repository.dart';
 
@@ -18,6 +17,6 @@ class MovieRepositoryImp extends MovieRepository {
       print("_____________${store.data![0].title}_______111_______");
       return Success<MoviesModelController>(date: store);
     }
-    return Error(message: 'error');
+    return Error(message: 'Something Worring');
   }
 }

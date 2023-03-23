@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:task_movies/movies/cubit/movie_cubit.dart';
-import 'package:task_movies/movies/cubit/movie_state.dart';
-import 'package:task_movies/movies/widgets/list_movies.dart';
+import 'package:task_movies/view/movies/cubit/movie_cubit.dart';
+import 'package:task_movies/view/movies/cubit/movie_state.dart';
+
+import '../introduction_screen/drawer_page.dart';
+import 'widgets/list_movies.dart';
 
 class HomePageMovies extends StatefulWidget {
   HomePageMovies({super.key});
@@ -17,6 +19,7 @@ class _HomePageMovies extends State<HomePageMovies> {
   void initState() {
     bloc = MovieCubit();
     super.initState();
+    bloc.getMovies2();
   }
 
   @override
@@ -24,8 +27,11 @@ class _HomePageMovies extends State<HomePageMovies> {
     return Scaffold(
         appBar: AppBar(
           actions: [],
-          title: Text('Home Page'),
+          title: Center(
+            child: Text('Movies'),
+          ),
         ),
+        drawer: CustomDrawer(),
         body: BlocProvider(
           create: (context) => bloc,
           child: Padding(
@@ -33,27 +39,7 @@ class _HomePageMovies extends State<HomePageMovies> {
             child: Center(
               child: Column(
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      Text(
-                        'My Home Page',
-                        style: TextStyle(
-                            fontSize: 32,
-                            color: Colors.white,
-                            fontFamily: 'pacifico'),
-                      ),
-                    ],
-                  ),
-                  // Number(),
-                  // Number2(),
-                  // Number3(),
-                  // ButtonOne(),
-                  // ButtonTwo(),
-                  // ButtonThree(),
-                  // ButtonReset()
-                  ButtonGetDataFromApi(),
-
+                  //ButtonGetDataFromApi(),
                   Flexible(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,

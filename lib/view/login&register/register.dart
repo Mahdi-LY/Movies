@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../route/approute.dart';
+import '../../route/approute.dart';
 
 class Register extends StatefulWidget {
   const Register({super.key});
@@ -142,13 +142,13 @@ class _Register extends State<Register> {
                         email: email!.trim(),
                         password: password!.trim(),
                       );
-                      Navigator.pushNamed(context, AppRoute.moviespage);
+                      Navigator.popAndPushNamed(context, AppRoute.loginpage);
                     } catch (e) {
                       print("-------- SIGN UP ----------- $e");
                     }
                     //  }
                   },
-                  child: Text('Sign Up'),
+                  child: Text('SignIn'),
                 ),
                 const SizedBox(
                   height: 100,

@@ -1,5 +1,6 @@
-import 'package:task_movies/movies/core/resourc.dart';
-import 'package:task_movies/movies/data/model/movies_modelc_ontroller.dart';
+
+
+import 'movies_modelc_ontroller.dart';
 
 class MoviesModelController {
   Meta? meta;
