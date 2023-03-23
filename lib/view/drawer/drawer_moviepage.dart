@@ -1,12 +1,9 @@
 import "package:firebase_auth/firebase_auth.dart";
 import "package:flutter/material.dart";
-
-import "../../constants/app_strings.dart";
-import "../../route/approute.dart";
+import '../../constants/app_strings.dart';
 
 class CustomDrawer extends StatefulWidget {
   const CustomDrawer({super.key});
-
   @override
   State<CustomDrawer> createState() => _CustomDrawerState();
 }

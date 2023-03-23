@@ -99,16 +99,7 @@ class _LoginPage extends State<LoginPage> {
                         );
                         Navigator.popAndPushNamed(context, AppRoute.moviespage);
                       } catch (e) {
-                        showDialog(
-                          context: context,
-                          builder: (BuildContext context) {
-                            return SizedBox(
-                              child: Dialog(
-                                child: Text("Check User Name OR Password"),
-                              ),
-                            );
-                          },
-                        );
+                        Navigator.of(context).restorablePush(_dialogBuilder);
                         print("-------- SIGN IN Error ----------- $e");
                       }
                     }
@@ -140,6 +131,43 @@ class _LoginPage extends State<LoginPage> {
       ),
     );
   }
+}
+
+Route<Object?> _dialogBuilder(BuildContext context, Object? arguments) {
+  return DialogRoute<void>(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        icon: Icon(
+          Icons.warning_rounded,
+          size: 100,
+          color: Colors.red,
+        ),
+        title: Center(child: const Text('Warring Login')),
+        //content: const Text('Check User Name And Password'),
+        actions: <Widget>[
+          // TextButton(
+          //   style: TextButton.styleFrom(
+          //     textStyle: Theme.of(context).textTheme.labelLarge,
+          //   ),
+          //   child: const Text('Disable'),
+          //   onPressed: () {
+          //     Navigator.of(context).pop();
+          //   },
+          // ),
+          TextButton(
+            style: TextButton.styleFrom(
+              textStyle: Theme.of(context).textTheme.labelLarge,
+            ),
+            child: const Text('Ok', style: TextStyle(fontSize: 20)),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
+        ],
+      );
+    },
+  );
 }
 
 Widget customTextFeild(

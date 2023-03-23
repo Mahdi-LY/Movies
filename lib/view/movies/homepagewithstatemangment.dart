@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:task_movies/view/movies/cubit/movie_cubit.dart';
 import 'package:task_movies/view/movies/cubit/movie_state.dart';
 
-import '../introduction_screen/drawer_page.dart';
+import '../drawer/drawer_moviepage.dart';
 import 'widgets/list_movies.dart';
 
 class HomePageMovies extends StatefulWidget {
