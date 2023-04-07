@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:task_movies/view/movies/widgets/item_movies.dart';
+import '../../../components/masked_image.dart';
+import '../../../constants/constants.dart';
 import '../core/resourc.dart';
 import '../cubit/movie_cubit.dart';
 import '../cubit/movie_state.dart';
 import '../data/model/movie_model.dart';
+import 'item_movies02.dart';
 import 'loading_center.dart';
 
-class MovieList extends StatelessWidget {
-  MovieList({super.key});
+class MovieList02 extends StatelessWidget {
+  MovieList02({super.key});
   MoviesModelController? responce;
   @override
   Widget build(BuildContext context) {
@@ -23,12 +26,26 @@ class MovieList extends StatelessWidget {
           responce = (state.resorce as Success<MoviesModelController>).date;
           return Expanded(
             child: ListView.builder(
+              physics: BouncingScrollPhysics(),
+              shrinkWrap: true,
+              scrollDirection: Axis.horizontal,
               itemCount: responce!.data!.length,
-              itemBuilder: (context, index) {
-                return MovieItem(
+              itemBuilder: ((context, index) {
+                // String mask;
+                // if (index == 0) {
+                //   mask = Constants.kMaskFirstIndex;
+                // } else if (index == responce!.data!.length - 1) {
+                //   mask = Constants.kMaskLastIndex;
+                // } else {
+                //   mask = Constants.kMaskCenter;
+                // }
+                MovieItem02(
                   movie: responce!.data![index],
+                  movielingth: responce!.data!.length,
+                  index: index,
+                 // mask: mask,
                 );
-              },
+              }),
             ),
           );
         }

@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import '../../route/approute.dart';
 
 class App extends StatelessWidget {
-  const App({super.key});
+  final bool showHome;
+  const App({super.key, required this.showHome});
 
   // This widget is the root of your application.
   @override
@@ -14,7 +15,7 @@ class App extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
       ),
-      initialRoute: AppRoute.loginpage,
+      initialRoute: showHome ? AppRoute.loginpage : AppRoute.Intro_Secreen,
       onGenerateRoute: AppRoute.ongenratedRoute,
       //home: const HomePageStepOne(),
     );

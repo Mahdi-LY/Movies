@@ -1,5 +1,5 @@
 name: task_movies
-description: A new Flutter project.
+description: A new Flutter project.6
 publish_to: 'none'
 version: 0.1.0
 
@@ -19,6 +19,9 @@ dependencies:
   http: ^0.13.5
   cupertino_icons: ^1.0.2
   smooth_page_indicator: ^1.0.1
+  flutter_svg: ^1.0.3
+  shared_preferences: ^2.0.20
+  glassmorphism: ^3.0.0
 
 
 dev_dependencies:
@@ -28,3 +31,9 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/
+    - assets/mask/
+    - assets/movie-posters/
+    - assets/svg/
+    - assets/icons/

@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:task_movies/view/movies/cubit/movie_cubit.dart';
-import 'package:task_movies/view/movies/cubit/movie_state.dart';
 
 import '../drawer/drawer_moviepage.dart';
 import 'widgets/list_movies.dart';
 
 class HomePageMovies extends StatefulWidget {
-  HomePageMovies({super.key});
+  const HomePageMovies({super.key});
 
   @override
   State<HomePageMovies> createState() => _HomePageMovies();
@@ -27,11 +26,11 @@ class _HomePageMovies extends State<HomePageMovies> {
     return Scaffold(
         appBar: AppBar(
           actions: [],
-          title: Center(
+          title: const Center(
             child: Text('Movies'),
           ),
         ),
-        drawer: CustomDrawer(),
+        drawer: const CustomDrawer(),
         body: BlocProvider(
           create: (context) => bloc,
           child: Padding(
@@ -57,25 +56,25 @@ class _HomePageMovies extends State<HomePageMovies> {
   }
 }
 
-class ButtonGetDataFromApi extends StatelessWidget {
-  const ButtonGetDataFromApi({super.key});
-  @override
-  Widget build(BuildContext context) {
-    return BlocBuilder<MovieCubit, MovieState>(
-      builder: (context, state) {
-        return Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 20),
-          child: ElevatedButton(
-            child: Text('Click to Get Data From Api !'),
-            onPressed: () {
-              context.read<MovieCubit>().getMovies2();
-            },
-          ),
-        );
-      },
-    );
-  }
-}
+// class ButtonGetDataFromApi extends StatelessWidget {
+//   const ButtonGetDataFromApi({super.key});
+//   @override
+//   Widget build(BuildContext context) {
+//     return BlocBuilder<MovieCubit, MovieState>(
+//       builder: (context, state) {
+//         return Padding(
+//           padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 20),
+//           child: ElevatedButton(
+//             child: const Text('Click to Get Data From Api !'),
+//             onPressed: () {
+//               context.read<MovieCubit>().getMovies2();
+//             },
+//           ),
+//         );
+//       },
+//     );
+//   }
+// }
 
 // import 'package:flutter/material.dart';
 // import 'package:flutter/src/widgets/container.dart';

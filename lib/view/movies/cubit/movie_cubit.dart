@@ -13,6 +13,6 @@ class MovieCubit extends Cubit<MovieState> {
     var result = await repositoryimpl.getMovies();
 
     emit(state.copyWith(resorce: result, status: Status.success));
-    print("____________222222____${(result)}___222222___");
+    //print("____________222222____${(result)}___222222___");
   }
 }
